@@ -9,18 +9,18 @@ disablePathToLower = true
 
 # For search functionality
 [outputs]
-home = [ "HTML", "RSS", "JSON"]
+home = [ "html", "rss"]
 
 [params]
   editURL = "https://github.com/gobolinux/Documentation/edit/master/content/"
-  description = "Documentation for GoboLinux"
-  author = "NEONsys.org"
   themeVariant = "gobolinux"
   titleSeparator = "::"
   disableLandingPageButton = true
   showVisitedLinks = true
   disableInlineCopyToClipBoard = true
   disableSeoHiddenPages = true
+  [params.author]
+    author = "NEONsys.org"
 
 [markup]
   [markup.tableOfContents]
@@ -34,29 +34,29 @@ home = [ "HTML", "RSS", "JSON"]
 [[menu.shortcuts]]
 name = "<i class='fas fa-fw fa-globe'></i> Homepage"
 url = "https://gobolinux.org/"
-weight = 0
+weight = 1
 
 [[menu.shortcuts]]
 name = "<i class='fab fa-fw fa-github'></i> Repository"
 url = "https://github.com/gobolinux"
-weight = 1
+weight = 2
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-fw fa-users'></i> Community"
 url = "https://gobolinux.discourse.group/"
-weight = 2
+weight = 3
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-fw fa-book'></i> Recipes"
 url = "https://github.com/gobolinux/Recipes"
-weight = 3
+weight = 4
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-fw fa-download'></i> Download ISO"
 url = "https://gobolinux.org/downloads.html"
-weight = 4
+weight = 5
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-fw fa-camera'></i> Showcases"
 url = "https://gobolinux.org/screenshots.html"
-weight = 5
+weight = 6
