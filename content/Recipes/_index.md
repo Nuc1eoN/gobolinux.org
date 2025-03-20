@@ -2,7 +2,7 @@
 title: "Recipes"
 weight: 3
 chapter: false
-pre: "<b>003 </b>"
+pre: "<b>003&thinsp;</b>"
 ---
 
 Recipes are directions to [`Compile`]({{%relref "Compile" %}}) on how to configure,

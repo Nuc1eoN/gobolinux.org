@@ -1,26 +1,39 @@
-baseURL = 'https://wiki.gobolinux.org/'
+baseURL = 'http://localhost:1313/'
 languageCode = 'en-us'
 title = 'GoboLinux Documentation'
 theme = "hugo-theme-relearn"
 disablePathToLower = true
 
 # Required in cases the project is *not* hosted under the root directory of the domain
-# relativeURLs = false
+relativeURLs = false
 
-# For search functionality
 [outputs]
-home = [ "html", "rss"]
+  home = [ "html", "rss", "print"]
+  page = ['html', 'rss', 'print']
+  section = ['html', 'rss', 'print']
 
 [params]
+  version="v017.01"
   editURL = "https://github.com/gobolinux/Documentation/edit/master/content/"
   themeVariant = "gobolinux"
-  titleSeparator = "::"
+  titleSeparator = "|"
   disableLandingPageButton = true
   showVisitedLinks = true
   disableInlineCopyToClipBoard = true
   disableSeoHiddenPages = true
+  alwaysopen = false
+  collapsibleMenu = true
   [params.author]
     author = "NEONsys.org"
+  [[params.versions]]
+    baseURL = "http://localhost:1313/"
+    identifier = "v017.01"
+    title = "v017.01 (latest)"
+    isLatest = true
+  [[params.versions]]
+    baseURL = "http://localhost:1314/v017/"
+    identifier = "v017"
+    title = "v017"
 
 [markup]
   [markup.tableOfContents]
@@ -60,3 +73,23 @@ weight = 5
 name = "<i class='fas fa-fw fa-camera'></i> Showcases"
 url = "https://gobolinux.org/screenshots.html"
 weight = 6
+
+sidebarfootermenus = []
+
+[[sidebarheadermenus]]
+  type = 'custom'
+
+  [[sidebarheadermenus.elements]]
+    type = 'languageswitcher'
+
+  [[sidebarheadermenus.elements]]
+    type = 'historyclearer'
+  
+  [[sidebarfootermenus.elements]]
+    type = 'versionswitcher'
+
+[[sidebarheadermenus]]
+  type = 'divider'
+
+[[sidebarmenus]]
+  type = 'page'

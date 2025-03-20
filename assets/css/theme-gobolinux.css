@@ -38,6 +38,8 @@
         #00ff5ab3 100%
     ); /* Background color of side bar */
     --MENU-SECTIONS-ACTIVE-BG-color: #00000033; /* Background color of the active section and its children */
+    --MENU-HOME-LINK-color: #fff; /* Color of version selector */
+    --MENU-HOME-LINK-HOVER-color: #cfcfcf; /* Color of version selector, when hovered */
     --MENU-SECTIONS-LINK-color: #fff; /* Color of links in menu */
     --MENU-SECTIONS-LINK-HOVER-color: #cfcfcf; /* Color of links in menu, when hovered */
     --MENU-VISITED-color: #21f3c0; /* Color of "page visited" icons in menu */
@@ -110,7 +112,7 @@ body h2, h3, .article-subheading, h4, h5, h6 {
     text-decoration: none;
 }
 
-/* Sidebar */
+/* -- Sidebar -- */
 #R-sidebar {
     font-size: 0.75rem;
     .nav-title {
@@ -123,8 +125,10 @@ body h2, h3, .article-subheading, h4, h5, h6 {
         margin-top: .6rem;
     }
     .R-sidebarmenu > ul > li > a b {
+        font-family: monospace;
         opacity: 0.6;
         font-weight: 400;
+        padding-left: .2rem;
     }
 }
 
@@ -133,8 +137,52 @@ body h2, h3, .article-subheading, h4, h5, h6 {
     border-inline-end-style: none;
 }
 
+/* Center collapsable arrows */
+/* big arrows: */
+#R-sidebar ul.collapsible-menu.enlarge > li > label {
+    display: flex;
+    height: 2.4rem;
+    align-items: center;
+    padding-left: .2rem;
+}
+
+/* small arrows: */
+#R-sidebar ul.collapsible-menu ul.collapsible-menu > li {
+    > label {
+        display: flex;
+        height: 1.7rem;
+        align-items: center;
+        padding-right: 0.35rem;
+        .fas {
+            font-size: .6rem;
+        }
+    }
+    > input:checked + label > .fa-chevron-right {
+        transform: rotate(90deg) translateX(-3px);
+    }
+}
+/* Fix weird hover glitch */
+#R-sidebar ul.collapsible-menu > li > label:after  {
+    content: none;
+}
+
 #R-sidebar hr {
     border-bottom: unset;
+}
+
+/* Version selector */
+#R-homelinks {
+    .R-versionswitcher {
+        text-align: center;
+    }
+    .menu-control {
+        display: inline-flex;
+        font-family: var(--MAIN-TITLES-font);
+        border: 1px solid var(--CODE-BLOCK-BORDER-color);
+        border-radius: .8rem;
+        justify-content: center;
+        margin: 0 auto;
+    }
 }
 
 #R-footer {
@@ -147,7 +195,7 @@ body h2, h3, .article-subheading, h4, h5, h6 {
     }
 }
 
-/* Inline code & code blocks */
+/* -- Inline code & code blocks -- */
 pre {
     background-color: black;
     border-radius: 0.8rem;
@@ -211,7 +259,7 @@ button.block-copy-to-clipboard-button:hover {
     border-color: transparent;
 }
 
-/* Notices */
+/*-- Notices --*/
 details.box {
     border: 1px solid;
     border-color: var(--VARIABLE-BOX-color);
